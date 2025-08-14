@@ -1,10 +1,8 @@
 // ------------------------------
-// Digital Advertising Particles (Optimized for Mobile)
+// Digital Particles Background
 // ------------------------------
 const canvas = document.getElementById('digital-particles');
 const ctx = canvas.getContext('2d');
-
-// Detect mobile
 const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 canvas.width = window.innerWidth;
@@ -13,10 +11,8 @@ canvas.height = window.innerHeight;
 const particles = [];
 const particleCount = isMobile ? 40 : 120;
 const maxDistance = isMobile ? 80 : 120;
-
 const adSymbols = ["💡", "📢", "🎯", "🛒", "📱", "💻", "✨"];
 
-// Initialize particles
 for (let i = 0; i < particleCount; i++) {
   particles.push({
     x: Math.random() * canvas.width,
@@ -30,7 +26,6 @@ for (let i = 0; i < particleCount; i++) {
 
 function drawParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
   particles.forEach(p => {
     ctx.font = `${p.radius * 5}px Arial`;
     ctx.fillStyle = 'rgba(255,60,120,0.9)';
@@ -73,35 +68,35 @@ window.addEventListener('resize', () => {
 });
 
 // ------------------------------
-// CEO Card 3D Tilt (Centered)
+// CEO Card 3D Tilt (Desktop Only)
 // ------------------------------
 const ceoCard = document.querySelector('.ceo-card');
-if (ceoCard) {
-  document.addEventListener('mousemove', (e) => {
+if (ceoCard && !isMobile) {
+  const heroCeo = ceoCard.parentElement;
+  heroCeo.addEventListener('mousemove', (e) => {
     const rect = ceoCard.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    ceoCard.style.transform = `rotateY(${x * 15}deg) rotateX(${y * 8}deg) translateZ(0)`;
+    ceoCard.style.transform = `rotateY(${x * 15}deg) rotateX(${-y * 8}deg) translateZ(0)`;
   });
-  document.addEventListener('mouseleave', () => {
+  heroCeo.addEventListener('mouseleave', () => {
     ceoCard.style.transform = `rotateY(0deg) rotateX(0deg) translateZ(0)`;
   });
 }
 
 // ------------------------------
-// Magazine Card Hover Effect (Restored)
+// Hero Text Glitch Effect
 // ------------------------------
-const magazineCards = document.querySelectorAll('.magazine-card');
-magazineCards.forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.transform = 'scale(1.05)';
-    card.style.boxShadow = '0 8px 20px rgba(255, 60, 120, 0.6)';
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'scale(1)';
-    card.style.boxShadow = 'none';
-  });
-});
+const glitchText = document.querySelector('.glitch');
+if (glitchText) {
+  function glitchEffect() {
+    glitchText.style.textShadow =
+      `${Math.random() * 4}px ${Math.random() * 4}px #ff3c78,
+       ${-Math.random() * 4}px ${-Math.random() * 4}px #ffb347`;
+    setTimeout(glitchEffect, 300);
+  }
+  glitchEffect();
+}
 
 // ------------------------------
 // Scroll-triggered Fade-in Animations
@@ -122,17 +117,64 @@ sections.forEach(section => {
 });
 
 // ------------------------------
-// Glitch Hero Text Effect
+// Magazine Card Hover Effects
 // ------------------------------
-const glitchText = document.querySelector('.glitch');
-if (glitchText) {
-  function glitchEffect() {
-    glitchText.style.textShadow =
-      `${Math.random() * 4}px ${Math.random() * 4}px #ff3c78,
-       ${-Math.random() * 4}px ${-Math.random() * 4}px #ffb347`;
-    setTimeout(glitchEffect, 300);
-  }
-  glitchEffect();
+const magazineCards = document.querySelectorAll('.magazine-card');
+magazineCards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.style.transform = 'scale(1.05)';
+    card.style.boxShadow = '0 8px 20px rgba(255, 60, 120, 0.6)';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'scale(1)';
+    card.style.boxShadow = 'none';
+  });
+});
+
+// ------------------------------
+// Contact Form Submission (Formspree)
+// ------------------------------
+const contactForm = document.querySelector(".contact-container form");
+if (contactForm) {
+  const messageBox = document.createElement("div");
+  messageBox.style.marginTop = "15px";
+  messageBox.style.padding = "12px";
+  messageBox.style.borderRadius = "12px";
+  messageBox.style.fontWeight = "500";
+  messageBox.style.textAlign = "center";
+  messageBox.style.display = "none";
+  contactForm.appendChild(messageBox);
+
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+
+    fetch(contactForm.action, {
+      method: "POST",
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        messageBox.textContent = "✅ Message sent successfully!";
+        messageBox.style.background = "rgba(0, 255, 150, 0.1)";
+        messageBox.style.color = "#00ff96";
+        messageBox.style.display = "block";
+        contactForm.reset();
+      } else {
+        messageBox.textContent = "⚠️ Oops! Something went wrong.";
+        messageBox.style.background = "rgba(255,0,0,0.1)";
+        messageBox.style.color = "#ff3c3c";
+        messageBox.style.display = "block";
+      }
+    })
+    .catch(() => {
+      messageBox.textContent = "⚠️ Oops! Something went wrong.";
+      messageBox.style.background = "rgba(255,0,0,0.1)";
+      messageBox.style.color = "#ff3c3c";
+      messageBox.style.display = "block";
+    });
+  });
 }
 
 // ------------------------------

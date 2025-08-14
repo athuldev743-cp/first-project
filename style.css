@@ -73,16 +73,15 @@ nav a:hover {
   }
 }
 
-/* ------------------------------
-   Hero Section
---------------------------------*/
+/* ------------------------------ Hero Section ------------------------------ */
 .hero {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 80px;
-  min-height: 100vh;
-  align-items: center;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  overflow: hidden;
 }
 
 .hero canvas {
@@ -96,10 +95,9 @@ nav a:hover {
 
 .hero-content {
   display: flex;
-  flex: 1;
-  position: relative;
+  align-items: center;
+  gap: 40px;
   z-index: 1;
-  gap: 30px;
   padding: 40px;
 }
 
@@ -109,6 +107,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #fff;
 }
 
 .hero-text h1 {
@@ -116,61 +115,89 @@ nav a:hover {
   background: linear-gradient(90deg, #ff6a00, #ee0979);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
 }
 
 .hero-text p {
-  margin: 15px 0;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .btn {
-  padding: 10px 20px;
-  background: #ff6a00;
-  color: white;
-  border-radius: 6px;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  color: #fff;
+  border-radius: 50px;
   font-weight: bold;
+  text-align: center;
   display: inline-block;
-  transition: background 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  background: #ee0979;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,60,120,0.5);
 }
 
-/* CEO Card Full Fit Desktop */
+/* CEO Card */
 .hero-ceo {
   flex: 1;
-  min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1200px; /* important for 3D tilt */
 }
 
 .ceo-card {
-  position: relative;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
   padding: 20px;
-  border-radius: 0; /* No rounding desktop */
   width: 100%;
-  max-width: 100%;
-  height: 100%;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
+  max-width: 350px;
+  text-align: center;
+  transform-style: preserve-3d;
   transition: transform 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  border-radius: 12px;
 }
 
 .ceo-card img {
   width: 100%;
   height: auto;
-  display: block;
   object-fit: cover;
+  margin-bottom: 15px;
 }
 
-@media (max-width: 768px) {
-  .ceo-card {
-    border-radius: 12px; /* Mobile rounding */
-    max-width: 400px;
+/* CEO Bio */
+.ceo-bio h3, .ceo-bio h4, .ceo-bio p {
+  margin: 5px 0;
+}
+
+/* ------------------------------ Responsive ------------------------------ */
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-ceo {
+    display: none; /* hide CEO card on tablet and mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
   }
 }
 
