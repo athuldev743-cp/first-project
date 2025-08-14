@@ -340,28 +340,94 @@ nav a:hover {
   line-height: 1.5;
 }
 
+/* ------------------------------
+   Vertical Contact Section
+--------------------------------*/
+.contact-container {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 30px; /* space between info and form */
+  justify-content: center;
+  align-items: center;
+  max-width: 600px; /* narrower for vertical look */
+  margin: auto;
+  padding: 40px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
 
+/* Contact Info */
+.contact-info {
+  text-align: center; /* center text for vertical layout */
+  width: 100%;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 8px;
+}
+
+.contact-info strong {
+  color: #ff6a00;
+}
+
+/* Form Styling */
+.contact-container form {
+  display: grid;
+  gap: 20px;
+  width: 100%; /* full width under contact info */
+}
+
+.contact-container input,
+.contact-container textarea,
+.contact-container button {
+  width: 100%; /* stretch inputs/buttons to full width */
+}
+
+/* Modern Button */
+.contact-container button {
+  padding: 15px;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s;
+}
+
+.contact-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(238,9,121,0.4);
+}
 
 /* ------------------------------
-   Contact Section
+   Tablet Adjustments (768px)
 --------------------------------*/
-/* Contact Section - Modern & Attractive */
-/* Contact Section - Modern & Attractive */
-/* Contact Section - Modern Glassmorphism */
-/* Extra mobile optimization */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .contact {
-    padding: 50px 15px;
+    padding: 60px 20px;
   }
 
   .contact h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
+    font-size: 2rem;
   }
 
   .contact-container {
-    padding: 20px;
-    gap: 20px;
+    max-width: 500px;
+    padding: 30px;
+    gap: 25px;
   }
 
   .contact-info li {
@@ -371,135 +437,30 @@ nav a:hover {
   .contact-container input,
   .contact-container textarea,
   .contact-container button {
-    font-size: 0.95rem;
-    width: 100%;
-  }
-
-  .contact-container button {
-    padding: 12px;
-  }
-}
-
-
-
-
-
-/* ------------------------------
-   Fade-in Animation
---------------------------------*/
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-}
-/* ------------------------------
-   Responsive Fixes
---------------------------------*/
-
-/* Global */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/* Ensure images and videos scale properly */
-img, video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Prevent unwanted horizontal scroll */
-body {
-  overflow-x: hidden;
-}
-
-/* Adjust hero section for smaller devices */
-@media (max-width: 1024px) {
-  .hero-content {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    padding: 20px;
-  }
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 10px 20px;
-  }
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-  .hero-text p {
     font-size: 1rem;
   }
-  .ceo-card {
-    max-width: 350px;
-  }
-  .magazine-card {
-    width: 300px;
-    height: auto;
-  }
 }
 
-/* Mobile screens */
+/* ------------------------------
+   Mobile Adjustments (480px)
+--------------------------------*/
 @media (max-width: 480px) {
-  header {
-    padding: 10px;
+  .contact {
+    padding: 50px 15px;
   }
-  nav {
-    flex-direction: column;
-    gap: 5px;
-  }
-  .hero {
-    padding-top: 100px;
-  }
-  .hero-text h1 {
+
+  .contact h2 {
     font-size: 1.8rem;
   }
-  .hero-text p {
-    font-size: 0.95rem;
-  }
-  .btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-  #services h2,
-  #feedback h2,
-  .contact h2 {
-    font-size: 2rem;
-  }
-  #services .card,
-  #feedback .card {
-    padding: 15px;
-  }
+
   .contact-container {
     padding: 20px;
+    gap: 20px;
   }
-  .contact-container input,
-  .contact-container textarea {
-    font-size: 0.9rem;
-  }
-}
 
-/* Fix for horizontal scroll on magazine section */
-.magazine {
-  display: flex;
-  flex-wrap: nowrap;
-}
-.magazine-card {
-  flex: 0 0 auto;
+  .contact-container input,
+  .contact-container textarea,
+  .contact-container button {
+    font-size: 0.95rem;
+  }
 }
