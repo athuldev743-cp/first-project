@@ -470,3 +470,111 @@ nav a:hover {
 .fade-in.visible {
   opacity: 1;
 }
+/* ------------------------------
+   Responsive Fixes
+--------------------------------*/
+
+/* Global */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Ensure images and videos scale properly */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent unwanted horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Adjust hero section for smaller devices */
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .ceo-card {
+    max-width: 350px;
+  }
+  .magazine-card {
+    width: 300px;
+    height: auto;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+  nav {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .hero {
+    padding-top: 100px;
+  }
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  #services h2,
+  #feedback h2,
+  .contact h2 {
+    font-size: 2rem;
+  }
+  #services .card,
+  #feedback .card {
+    padding: 15px;
+  }
+  .contact-container {
+    padding: 20px;
+  }
+  .contact-container input,
+  .contact-container textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix for horizontal scroll on magazine section */
+.magazine {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.magazine-card {
+  flex: 0 0 auto;
+}
