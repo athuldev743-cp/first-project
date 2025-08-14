@@ -348,113 +348,38 @@ nav a:hover {
 /* Contact Section - Modern & Attractive */
 /* Contact Section - Modern & Attractive */
 /* Contact Section - Modern Glassmorphism */
-.contact {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, rgba(255,106,0,0.1), rgba(238,9,121,0.1));
-  color: white;
-  text-align: center;
-}
+/* Extra mobile optimization */
+@media (max-width: 480px) {
+  .contact {
+    padding: 50px 15px;
+  }
 
-.contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
+  .contact h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
 
-/* Container Layout */
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1000px;
-  margin: auto;
-  padding: 30px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-}
-
-/* Contact Info */
-.contact-info {
-  flex: 1;
-  min-width: 250px;
-  text-align: left;
-}
-
-.contact-info ul {
-  list-style: none;
-  padding: 0;
-}
-
-.contact-info li {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-}
-
-.contact-info strong {
-  color: #ff6a00;
-}
-
-/* Form Styling */
-.contact-container form {
-  flex: 1;
-  min-width: 300px;
-  display: grid;
-  gap: 20px;
-}
-
-.contact-container input,
-.contact-container textarea {
-  padding: 15px;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.15);
-  color: white;
-  font-size: 1rem;
-  outline: none;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-container input:focus,
-.contact-container textarea:focus {
-  background: rgba(255,255,255,0.25);
-  box-shadow: 0 0 10px rgba(255,106,0,0.5);
-}
-
-/* Submit Button */
-.contact-container button {
-  padding: 15px;
-  font-size: 1.1rem;
-  background: linear-gradient(90deg, #ff6a00, #ee0979);
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  color: white;
-  letter-spacing: 1px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-container button:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 5px 20px rgba(238,9,121,0.4);
-}
-
-/* Responsive for Mobile */
-@media (max-width: 768px) {
   .contact-container {
-    flex-direction: column;
-    text-align: center;
+    padding: 20px;
+    gap: 20px;
   }
 
-  .contact-info {
-    text-align: center;
+  .contact-info li {
+    font-size: 1rem;
+  }
+
+  .contact-container input,
+  .contact-container textarea,
+  .contact-container button {
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .contact-container button {
+    padding: 12px;
   }
 }
+
 
 
 
