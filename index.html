@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reflect Media</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -24,13 +27,13 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
+  <section class="hero fade-in" id="home">
     <canvas id="digital-particles"></canvas>
     <div class="hero-content">
       <!-- Hero Text -->
       <div class="hero-text">
         <h1 class="glitch">Reflect Media</h1>
-        <p class="vision-text">Content based markrting, transforming how people experience technology and creativity.</p>
+        <p class="vision-text">Content based marketing, transforming how people experience technology and creativity.</p>
         <a href="#contact" class="btn">Get in Touch</a>
       </div>
 
@@ -38,7 +41,7 @@
       <div class="hero-ceo">
         <div class="ceo-card">
           <div class="ceo-img-container">
-            <img src="ASSETS/CEO.jpeg" alt="CEO" class="ceo-img">
+            <img src="ASSETS/CEO.jpeg" alt="Portrait of JINSHAD, Founder & CEO" class="ceo-img" loading="eager">
             <div class="holo-overlay"></div>
           </div>
           <div class="ceo-bio">
@@ -54,74 +57,72 @@
   <!-- About Section -->
   <section class="about" id="about">
     <h2>About Us</h2>
-    <p>At Reflect Media, we specialize in content-based marketing that transforms how businesses connect with their audiences. By crafting compelling, relevant, and value-driven content, we empower brands to engage, inform, and inspire their customers at every touchpoint. Our innovative strategies go beyond traditional advertising — we focus on creating meaningful experiences that build trust, loyalty, and measurable growth. Whether your goal is to elevate brand awareness, generate leads, or strengthen customer relationships, Reflect Media provides tailored solutions that ensure your message reaches the right people, in the right way, at the right time. We don’t just market products; we craft stories that resonate, influence, and drive lasting impact.</p>
+    <p>At Reflect Media, we specialize in content-based marketing that transforms how businesses connect with their audiences. By crafting compelling, relevant, and value-driven content, we empower brands to engage, inform, and inspire their customers at every touchpoint. Our innovative strategies go beyond traditional advertising — we focus on creating meaningful experiences that build trust, loyalty, and measurable growth.</p>
   </section>
-<!-- Magazine Section -->
-<section class="magazine" id="magazine">
-  <h2>Our Magazine</h2>
-  <div class="magazine-grid">
-    <div class="magazine-card">
-      <img src="ASSETS/mag1.jpeg" alt="Magazine 1">
-      <h3>Digital Trends 2025</h3>
-    </div>
-    <div class="magazine-card">
-      <img src="ASSETS/mag2.jpeg" alt="Magazine 2">
-      <h3>Marketing Insights</h3>
-    </div>
-    <div class="magazine-card">
-      <img src="ASSETS/mag3.jpeg" alt="Magazine 3">
-      <h3>Innovation Weekly</h3>
-    </div>
-  </div>
-</section>
 
+  <!-- Magazine Section -->
+  <section class="magazine" id="magazine">
+    <h2>Our Magazine</h2>
+    <div class="magazine-grid">
+      <div class="magazine-card">
+        <img src="ASSETS/mag1.jpeg" alt="Magazine cover: Digital Trends 2025" loading="lazy">
+        <h3>Digital Trends 2025</h3>
+      </div>
+      <div class="magazine-card">
+        <img src="ASSETS/mag2.jpeg" alt="Magazine cover: Marketing Insights" loading="lazy">
+        <h3>Marketing Insights</h3>
+      </div>
+      <div class="magazine-card">
+        <img src="ASSETS/mag3.jpeg" alt="Magazine cover: Innovation Weekly" loading="lazy">
+        <h3>Innovation Weekly</h3>
+      </div>
+    </div>
+  </section>
 
   <!-- Services Section -->
   <section id="services">
-  <h2>Our Services</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="ASSETS/cdsser.png" alt="Service 1">
-      <h3>content based marketing</h3>
-      <p>Content-Based Marketing is a strategic marketing approach focused on creating, publishing, and distributing valuable, relevant, and consistent content to attract and engage a clearly defined audience. The goal is to build trust, provide useful information, and ultimately drive profitable customer actions by addressing the audience’s needs and interests rather than directly promoting a product or service..</p>
+    <h2>Our Services</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="ASSETS/cdsser.png" alt="Service illustration: Content Based Marketing" loading="lazy">
+        <h3>Content Based Marketing</h3>
+        <p>We focus on creating, publishing, and distributing valuable, relevant, and consistent content to attract and engage your audience — building trust and driving customer action.</p>
+      </div>
+      <div class="card">
+        <img src="ASSETS/serv2.jpeg" alt="Service illustration: Connecting Customers" loading="lazy">
+        <h3>Connecting Customers</h3>
+        <p>We create meaningful relationships by engaging, understanding, and responding to customer needs, fostering trust and loyalty.</p>
+      </div>
+      <div class="card">
+        <img src="ASSETS/serv3.jpeg" alt="Service illustration: Social Media Services" loading="lazy">
+        <h3>Social Media Services</h3>
+        <p>We manage and optimize your presence across social platforms — from content creation to analytics — boosting brand visibility and engagement.</p>
+      </div>
     </div>
-    <div class="card">
-      <img src="ASSETS/serv2.jpeg" alt="Service 2">
-      <h3>connecting customers</h3>
-      <p>Connecting with Customers involves building meaningful relationships by engaging, understanding, and responding to their needs. It focuses on creating trust, loyalty, and personalized experiences that turn interactions into long-term connections.</p>
-    </div>
-    <div class="card">
-      <img src="ASSETS/serv3.jpeg" alt="Service 3">
-      <h3>Social media serviece</h3>
-      <p>Social Media Services help businesses create, manage, and optimize their presence across social platforms. These services include content creation, audience engagement, advertising, and analytics to boost brand visibility, connect with customers, and drive growth.</p>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Feedback Section -->
- <section id="feedback">
-  <h2>Customer Feedback</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="ASSETS/cust.jpeg" alt="Customer 1">
-      <h3>vishnu prakash</h3>
-      <H5>ceo of oquilix</H5>
-      <p>"Working with Reflect media has transformed our online presence. Their strategies are innovative, results-driven, and the team is always proactive in helping our business grow. Highly recommended!"</p>
+  <section id="feedback">
+    <h2>Customer Feedback</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="ASSETS/cust.jpeg" alt="Portrait of Vishnu Prakash" loading="lazy">
+        <h3>Vishnu Prakash</h3>
+        <h5>CEO of Oquilix</h5>
+        <p>"Working with Reflect Media has transformed our online presence. Innovative, results-driven, and proactive — highly recommended!"</p>
+      </div>
+      <div class="card">
+        <img src="ASSETS/cust2.jpeg" alt="Portrait of Sandeep P" loading="lazy">
+        <h3>Sandeep P</h3>
+        <p>"Extremely impressed with the professionalism and dedication of the team. A game-changer for our business!"</p>
+      </div>
+      <div class="card">
+        <img src="ASSETS/cust3.enc" alt="Portrait of Shamsad" loading="lazy">
+        <h3>Shamsad</h3>
+        <p>"The team brought our ideas to life with creativity and skill. The final product exceeded expectations!"</p>
+      </div>
     </div>
-    <div class="card">
-      <img src="ASSETS/cust2.jpeg" alt="Customer 2">
-      <h3>sandeep.p</h3>
-      <p>"I’m extremely impressed with the professionalism and dedication of the team. They understood our needs perfectly and delivered results beyond our expectations. Truly a game-changer for our business!"</p>
-    </div>
-    <div class="card">
-      <img src="ASSETS/cust3.enc" alt="Customer 3">
-      <h3>shamsad</h3>
-      <p>"The team at Reflect media brought our game ideas to life with incredible creativity and technical skill. The final product exceeded our expectations, and the support throughout development was outstanding!"</p>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact Section -->
   <section class="contact" id="contact">
@@ -129,7 +130,7 @@
     <div class="contact-container">
       <div class="contact-info">
         <ul>
-          <li><strong>Address:</strong> mg road, kochi, kerala</li>
+          <li><strong>Address:</strong> MG Road, Kochi, Kerala</li>
           <li><strong>Email:</strong> reflectmediamarketing@gmail.com</li>
           <li><strong>Phone:</strong> 07994157181</li>
           <li><strong>Hours:</strong> Mon-Fri, 9 AM - 6 PM</li>
@@ -148,6 +149,7 @@
     <p>&copy; 2025 Reflect Media. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Script -->
+  <script src="script.js" defer></script>
 </body>
 </html>
