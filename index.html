@@ -16,44 +16,53 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">Reflect Media</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#feedback">Customer Feedback</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="logo">Reflect Media</div>
+  
+  <!-- Hamburger Menu -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#feedback">Customer Feedback</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
 
   <!-- Hero Section -->
-<section class="hero">
-  <canvas id="digital-particles"></canvas>
+  <section class="hero" id="home">
+    <canvas id="digital-particles"></canvas>
 
-  <div class="hero-content">
-    <!-- Hero Text -->
-    <div class="hero-text">
-      <h1>Reflect Media</h1>
-      <p>Content based marketing, transforming how people experience technology and creativity.</p>
-      <a href="#contact" class="btn">Get in Touch</a>
-    </div>
+    <div class="hero-content">
+      <!-- Hero Text -->
+      <div class="hero-text">
+        <h1>Reflect Media</h1>
+        <p>Content based marketing, transforming how people experience technology and creativity.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
 
-    <!-- CEO Card (desktop only) -->
-    <div class="hero-ceo">
-      <div class="ceo-card">
-        <div class="ceo-img-container">
-          <img src="ASSETS/CEO.jpeg" alt="Portrait of JINSHAD, Founder & CEO" class="ceo-img" loading="eager">
-          <div class="holo-overlay"></div>
-        </div>
-        <div class="ceo-bio">
-          <h3>JINSHAD</h3>
-          <h4>Founder & CEO</h4>
-          <p>"At Reflect Media, we empower businesses and customers with innovation and quality."</p>
+      <!-- CEO Card -->
+      <div class="hero-ceo">
+        <div class="ceo-card">
+          <div class="ceo-img-container">
+            <img src="ASSETS/CEO.jpeg" alt="Portrait of JINSHAD, Founder & CEO" class="ceo-img" loading="eager">
+            <div class="holo-overlay"></div>
+          </div>
+          <div class="ceo-bio">
+            <h3>JINSHAD</h3>
+            <h4>Founder & CEO</h4>
+            <p>"At Reflect Media, we empower businesses and customers with innovation and quality."</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- About Section -->
   <section class="about" id="about">
@@ -118,40 +127,37 @@
         <p>"Extremely impressed with the professionalism and dedication of the team. A game-changer for our business!"</p>
       </div>
       <div class="card">
-        <img src="ASSETS/cust3.enc" alt="Portrait of Shamsad" loading="lazy">
-        <h3>Shamsad</h3>
+        <img src="ASSETS/custtr.jpeg" alt="Portrait of Shamsad" loading="lazy">
+        <h3>Shakir hussain</h3>
         <p>"The team brought our ideas to life with creativity and skill. The final product exceeded expectations!"</p>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
- <section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact-container">
-    
-    <!-- Contact Info -->
-    <div class="contact-info">
-      <ul>
-        <li><strong>Address:</strong> MG Road, Kochi, Kerala</li>
-        <li><strong>Email:</strong> reflectmediamarketing@gmail.com</li>
-        <li><strong>Phone:</strong> 07994157181</li>
-        <li><strong>Hours:</strong> Mon-Fri, 9 AM - 6 PM</li>
-      </ul>
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <ul>
+          <li><strong>Address:</strong> MG Road, Kochi, Kerala</li>
+          <li><strong>Email:</strong> reflectmediamarketing@gmail.com</li>
+          <li><strong>Phone:</strong> 07994157181</li>
+          <li><strong>Hours:</strong> Mon-Fri, 9 AM - 6 PM</li>
+        </ul>
+      </div>
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/mkgzejaq" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-    
-    <!-- Contact Form using Formspree -->
-    <form action="https://formspree.io/f/mkgzejaq" method="POST">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" rows="5" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    
-  </div>
-</section>
+  </section>
 
-
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Reflect Media. All rights reserved.</p>
   </footer>
